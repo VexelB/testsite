@@ -1,0 +1,17 @@
+include ./components/textfield/textfield
+include ./components/dropdown/dropdown
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Пример страницы
+    link(rel="stylesheet" type="text/css" href="main.css")
+
+  body
+    .wrapper
+      +textfield({value: "Email", type: "subs"})
+      +dropdown({value: "Сколько гостей", vals: ["Взрослые", "Дети", "Младенцы"]})
+      +textfield({value: "Email"})
+      +dropdown({value: "Сколько гостей"})
+    script(src="js/dropdown.js")

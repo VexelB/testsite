@@ -1,0 +1,9 @@
+@import "/components/textfield/textfield.css";
+@import "/components/dropdown/dropdown.css";
+@import "/components/button/button.css";
+  
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,9 @@
+mixin dropdowncont(options)
+    -
+        let count = 0
+    .dropdowncont
+        span= options.value
+        .butns
+            div(class= "min")= "-"
+            span= count
+            div(class= "max")= "+"
