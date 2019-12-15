@@ -1,3 +1,16 @@
+.title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+
+}
+.sndbtn {
+    cursor: pointer;
+    fill: #8BA4F9;
+}
 .text {
     width: 320px;
     height: 44px;

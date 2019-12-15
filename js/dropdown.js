@@ -27,9 +27,25 @@ function guestcount(e) {
         q[q.length-1].firstChild.style.display = "none";
     }
 };
+function count(e) {
+    let temps = e.parentNode.parentNode.childNodes;
+    let count = [];
+    let tstr = [];
+    let str=""
+    for (let i = 0; i < temps.length-1; i++) {
+        count.push();
+        tstr.push(temps[i].lastChild.childNodes[0]);
+        str += temps[i].lastChild.childNodes[1].innerText + ' '+temps[i].childNodes[0].innerText.toLowerCase()
+        if (i != temps.length-2) {
+            str += ', '
+        }
+    }
+    e.parentNode.parentNode.previousSibling.firstChild.innerText= str;
+};
 
-let mins = document.querySelectorAll(".drop .min");
-let maxs = document.querySelectorAll(".drop .max");
+
+let mins = document.querySelectorAll(".dropdowncont .min");
+let maxs = document.querySelectorAll(".dropdowncont .max");
 
 for (let i = 0; i< mins.length; i++) {
     mins[i].addEventListener('click', e => {
@@ -53,7 +69,7 @@ for (let i = 0; i< mins.length; i++) {
     });
 }
 
-document.querySelectorAll(".drop .err").forEach(e => e.addEventListener("click", e => {
+document.querySelectorAll(".dropdown-content .err").forEach(e => e.addEventListener("click", e => {
     let temp = e.target.parentNode.parentNode.childNodes;
     for (let i = 0; i<temp.length-1; i++) {
         temp[i].lastChild.childNodes[1].innerText = "0";
@@ -61,4 +77,5 @@ document.querySelectorAll(".drop .err").forEach(e => e.addEventListener("click",
     }
     guestcount(e.target);
 }));
-document.querySelectorAll(".drop .suc").forEach(e => e.addEventListener("click", e => guestcount(e.target)));
+document.querySelectorAll(".dropguests .suc").forEach(e => e.addEventListener("click", e => guestcount(e.target)));
+document.querySelectorAll(".drop .suc").forEach(e => e.addEventListener("click", e => count(e.target)));
